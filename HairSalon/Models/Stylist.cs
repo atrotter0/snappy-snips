@@ -25,5 +25,6 @@ namespace HairSalon.Models
         public string Phone { get; set; }
 
         public virtual ICollection<Client> Clients { get; set; }
+        public virtual ICollection<StylistSpecialty> StylistsSpecialties { get; set; }
     }
 }

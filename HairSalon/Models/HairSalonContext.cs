@@ -10,6 +10,8 @@ namespace HairSalon.Models
     {
         public DbSet<Stylist> Stylists { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Specialty> Specialties { get; set; }
+        public virtual DbSet<StylistSpecialty> StylistsSpecialties { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
