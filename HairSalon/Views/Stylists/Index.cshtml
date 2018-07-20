@@ -20,7 +20,7 @@
                 <div class="grid-item">@Html.ActionLink("Details", "Details", new { id = stylist.StylistId })</div>
                 <div class="grid-item">@Html.ActionLink("Edit", "Edit", new { id = stylist.StylistId })</div>
                 <div class="grid-item">
-                    @using (Html.BeginForm("delete", "stylist", new { id = stylist.StylistId }, FormMethod.Post))
+                    @using (Html.BeginForm("delete", "stylists", new { id = stylist.StylistId }, FormMethod.Post))
                     {
                         <input type="submit" value="Delete" class="no-btn-styles"/>
                     }
