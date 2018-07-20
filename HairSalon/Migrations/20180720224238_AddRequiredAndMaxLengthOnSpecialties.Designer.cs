@@ -8,9 +8,10 @@ using HairSalon.Models;
 namespace HairSalon.Migrations
 {
     [DbContext(typeof(HairSalonContext))]
-    partial class HairSalonContextModelSnapshot : ModelSnapshot
+    [Migration("20180720224238_AddRequiredAndMaxLengthOnSpecialties")]
+    partial class AddRequiredAndMaxLengthOnSpecialties
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.1");
