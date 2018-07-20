@@ -51,6 +51,12 @@ namespace HairSalon.Controllers
         public ActionResult Edit(int id)
         {
             Client client = db.Clients.FirstOrDefault(item => item.ClientId == id);
+            ViewBag.StylistId = db.Stylists.ToList()
+                .Select(stylist => new SelectListItem {
+                    Value = stylist.StylistId.ToString(),
+                    Text = stylist.FirstName + " " + stylist.LastName
+                })
+                .ToList();
             return View(client);
         }
 
