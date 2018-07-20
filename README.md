@@ -30,6 +30,7 @@ A .NET web app that allows the owner of a hair salon to add stylists, their spec
 * Download and install Mono
 * Download and install MAMP 4.5
 * Clone the repo
+* Start MAMP MySQL server
 * Run `dotnet restore` from project directory and test directory to install packages
 * Run `dotnet build` from project directory and fix any build errors
 * Run `dotnet ef database update` to run migrations

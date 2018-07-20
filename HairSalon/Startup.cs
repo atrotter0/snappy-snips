@@ -1,17 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using HairSalon.Models;
 
 namespace HairSalon
 {
-    // update DbNameHere with correct db name
-    public static class DBConfiguration
-    {
-        public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=DbNameHere;";
-    }
-
     public class Startup
     {
         public Startup(IHostingEnvironment env)
@@ -41,7 +40,7 @@ namespace HairSalon
             });
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("An error occurred.");
+                await context.Response.WriteAsync("Invalid path or request. Please try again.");
             });
         }
     }

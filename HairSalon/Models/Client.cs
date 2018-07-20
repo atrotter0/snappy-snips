@@ -6,13 +6,14 @@ using HairSalon;
 
 namespace HairSalon.Models
 {
-    [Table("Stylists")]
-    public class Stylist
+    [Table("Clients")]
+    public class Client
     {
         [Key]
-        public int StylistId { get; set; }
+        public int ClientId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Email { get; set; }
         public string Phone { get; set; }
     }
 }
