@@ -2,14 +2,15 @@
 @model Stylist
 
 @{
-    ViewData["Title"] = "Snappy Snips | Add Stylist";
+    ViewData["Title"] = "Snappy Snips | Edit Stylist";
     Layout = "_Layout";
 }
 
 <div class="container">
-    <h1>Add Stylist</h1>
+    <h1>Edit Stylist</h1>
     @using (Html.BeginForm())
     {
+        @Html.HiddenFor(model => model.StylistId)
         <div class="form-group">
             <label asp-for="FirstName"><h4>First Name:</h4></label>
             @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", required = "true" })
@@ -25,6 +26,6 @@
             @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", required = "true" })
             <span asp-validation-for="Phone" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-lg btn-info">Create Stylist</button>
+        <button type="submit" class="btn btn-lg btn-info">Update Stylist</button>
     }
 </div>

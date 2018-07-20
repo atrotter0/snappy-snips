@@ -7,10 +7,6 @@ h1 {
     margin: 30px 0px;
 }
 
-h4 {
-    margin: 30px 0px;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
