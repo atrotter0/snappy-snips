@@ -1,0 +1,31 @@
+@model IEnumerable<HairSalon.Models.Stylist>
+
+@{
+    ViewData["Title"] = "Snappy Snips | Stylists";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Stylists</h1>
+    @Html.ActionLink("Add Stylist", "Create", "Stylists", null, new { @class="btn btn-lg btn-info" })
+    @if (Model.Count() > 0)
+    {
+        <div class="grid-container">
+            @foreach(var stylist in Model)
+            {
+                <div class="grid-item">
+                    @Html.DisplayFor(modelItem => stylist.FirstName) 
+                    @Html.DisplayFor(modelItem => stylist.LastName)
+                </div>
+                <div class="grid-item">@Html.ActionLink("Details", "Details", new { id = stylist.StylistId })</div>
+                <div class="grid-item">@Html.ActionLink("Edit", "Edit", new { id = stylist.StylistId })</div>
+                <div class="grid-item">
+                    @using (Html.BeginForm("delete", "stylist", new { id = stylist.StylistId }, FormMethod.Post))
+                    {
+                        <input type="submit" value="Delete" class="no-btn-styles"/>
+                    }
+                </div>
+            }
+        </div>
+    }
+</div>
