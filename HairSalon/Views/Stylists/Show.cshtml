@@ -13,7 +13,7 @@
     <ul class="salon-list">
         @foreach (var client in ViewBag.ClientList)
         {
-            <li><img src="/img/anon-person.png" class="icon-thumb"><a href="/clients/@client.ClientId">@client.FirstName @client.LastName</a></li>
+            <li><img src="/img/client-icon.png" class="client-icon"><a href="/clients/@client.ClientId">@client.FirstName @client.LastName</a></li>
         }
     </ul>
     <hr />
