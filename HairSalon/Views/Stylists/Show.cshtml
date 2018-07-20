@@ -7,12 +7,14 @@
 }
 
 <div class="container">
-    <h1>Stylist Details</h1>
-    <h4>Name: @Model.FirstName @Model.LastName</h4>
-    <h4>Phone: @Model.Phone</h4>
-    <h4>Clients: </h4>
-    <ul>
-        <!-- <li>Add clients here</li> -->
+    <h3>@Model.FirstName @Model.LastName</h3>
+    <p>Phone: @Model.Phone</p>
+    <p>Clients: </p>
+    <ul class="salon-list">
+        @foreach (var client in ViewBag.ClientList)
+        {
+            <li><img src="/img/anon-person.png" class="icon-thumb"><a href="/clients/@client.ClientId">@client.FirstName @client.LastName</a></li>
+        }
     </ul>
     <hr />
     <a href="/stylists" class="btn btn-lg btn-info">Back</a>

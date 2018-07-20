@@ -32,3 +32,16 @@ h1 {
     color: #23527c;
     text-decoration: underline;
 }
+
+.salon-list {
+    list-style-type: none;
+}
+
+.salon-list li {
+    margin: 20px -20px;
+}
+
+.icon-thumb {
+    width: 30px;
+    margin-right: 20px;
+}
