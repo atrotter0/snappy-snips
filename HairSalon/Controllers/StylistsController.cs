@@ -34,7 +34,7 @@ namespace HairSalon.Controllers
         }
 
         [HttpGet("/stylists/{id}")]
-        public ActionResult Details(int id)
+        public ActionResult Show(int id)
         {
             Stylist stylist = db.Stylists.FirstOrDefault(item => item.StylistId == id);
             return View(stylist);
