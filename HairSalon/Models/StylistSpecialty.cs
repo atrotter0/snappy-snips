@@ -14,6 +14,8 @@ namespace HairSalon.Models
         public virtual Stylist Stylist { get; set; }
         public virtual Specialty Specialty { get; set; }
 
+        public StylistSpecialty() {}
+
         public StylistSpecialty(int stylistId, int specialtyId)
         {
             StylistId = stylistId;

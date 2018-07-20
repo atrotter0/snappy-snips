@@ -15,6 +15,13 @@
             @Html.TextBoxFor(model => model.Name, new { @class = "form-control", required = "true" })
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
+        if (ViewBag.StylistIds.Count != 0)
+        {
+            <div class="form-group">
+                <label for="StylistIds"><h4>Stylists:</h4></label>
+                @Html.DropDownList("StylistIds", null, new { multiple = "true", @class = "form-control" })
+            </div>
+        }
         <button type="submit" class="btn btn-lg btn-info">Create Specialty</button>
         <a href="/specialties" class="btn btn-lg btn-info">Back</a>
     }

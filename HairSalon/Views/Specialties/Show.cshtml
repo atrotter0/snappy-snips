@@ -1,0 +1,20 @@
+@using HairSalon.Models
+@model HairSalon.Models.Specialty
+
+@{
+    ViewData["Title"] = "Snappy Snips | Specialty Details";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h3>@Model.Name</h3>
+    <p>Stylists With Specialty: </p>
+    <ul class="salon-list">
+        @foreach (var stylist in ViewBag.StylistList)
+        {
+            <li><img src="/img/stylist-icon.svg" class="stylist-icon"><a href="/stylists/@stylist.StylistId">@stylist.FirstName @stylist.LastName</a></li>
+        }
+    </ul>
+    <hr />
+    <a href="/specialties" class="btn btn-lg btn-info">Back</a>
+</div>
