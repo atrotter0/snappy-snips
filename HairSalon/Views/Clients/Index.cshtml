@@ -17,7 +17,7 @@
                     @Html.DisplayFor(modelItem => client.FirstName) 
                     @Html.DisplayFor(modelItem => client.LastName)
                 </div>
-                <div class="grid-item">@Html.ActionLink("Details", "Details", new { id = client.ClientId })</div>
+                <div class="grid-item">@Html.ActionLink("Details", "Show", new { id = client.ClientId })</div>
                 <div class="grid-item">@Html.ActionLink("Edit", "Edit", new { id = client.ClientId })</div>
                 <div class="grid-item">
                     @using (Html.BeginForm("delete", "Clients", new { id = client.ClientId }, FormMethod.Post))

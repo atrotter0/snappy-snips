@@ -7,14 +7,12 @@
 }
 
 <div class="container">
-    <h1>Client Details</h1>
-    <h4>Name: @Model.FirstName @Model.LastName</h4>
-    <h4>Email: @Model.Email</h4>
-    <h4>Phone: @Model.Phone</h4>
-    <h4>Stylist: </h4>
-    <ul>
-        <!-- <li>Add clients here</li> -->
-    </ul>
+    <h3>@Model.FirstName @Model.LastName</h3>
+    <p>Email: @Model.Email</p>
+    <p>Phone: @Model.Phone</p>
+    <p>Stylist: 
+        <a href="/stylists/@ViewBag.Stylist.StylistId">@ViewBag.Stylist.FirstName @ViewBag.Stylist.LastName</a>
+    </p>
     <hr />
     <a href="/clients" class="btn btn-lg btn-info">Back</a>
 </div>
