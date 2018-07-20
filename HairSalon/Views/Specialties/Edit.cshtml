@@ -1,0 +1,22 @@
+@using HairSalon.Models
+@model Specialty
+
+@{
+    ViewData["Title"] = "Snappy Snips | Edit Specialty";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Edit Specialty</h1>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.SpecialtyId)
+        <div class="form-group">
+            <label asp-for="Name"><h4>Type:</h4></label>
+            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", required = "true" })
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-lg btn-info">Create Specialty</button>
+        <a href="/specialties" class="btn btn-lg btn-info">Back</a>
+    }
+</div>
