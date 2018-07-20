@@ -8,8 +8,8 @@ using HairSalon.Models;
 namespace HairSalon.Migrations
 {
     [DbContext(typeof(HairSalonContext))]
-    [Migration("20180720193226_AddOneToManyForStylistsAndClients")]
-    partial class AddOneToManyForStylistsAndClients
+    [Migration("20180720211429_CreateDatabase")]
+    partial class CreateDatabase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,7 +35,7 @@ namespace HairSalon.Migrations
                     b.Property<string>("Phone")
                         .IsRequired();
 
-                    b.Property<int?>("StylistId");
+                    b.Property<int>("StylistId");
 
                     b.HasKey("ClientId");
 
@@ -69,7 +69,8 @@ namespace HairSalon.Migrations
                 {
                     b.HasOne("HairSalon.Models.Stylist", "Stylist")
                         .WithMany("Clients")
-                        .HasForeignKey("StylistId");
+                        .HasForeignKey("StylistId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

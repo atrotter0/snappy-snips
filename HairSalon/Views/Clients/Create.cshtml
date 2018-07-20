@@ -7,37 +7,42 @@
 }
 
 <div class="container">
-    <h1>Add Client</h1>
-    @using (Html.BeginForm())
+    @if (ViewBag.StylistId.Count != 0)
     {
-        <div class="form-group">
-            <label asp-for="FirstName"><h4>First Name:</h4></label>
-            @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", required = "true" })
-            <span asp-validation-for="FirstName" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="LastName"><h4>Last Name:</h4></label>
-            @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", required = "true" })
-            <span asp-validation-for="LastName" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Email"><h4>Email:</h4></label>
-            @Html.TextBoxFor(model => model.Email, new { @class = "form-control", required = "true" })
-            <span asp-validation-for="Email" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Phone"><h4>Phone:</h4></label>
-            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", required = "true" })
-            <span asp-validation-for="Phone" class="text-danger"></span>
-        </div>
-        @if (ViewBag.StylistList.Count != 0)
+        <h1>Add Client</h1>
+        @using (Html.BeginForm())
         {
             <div class="form-group">
-                <label asp-for="StylistList"><h4>Stylists:</h4></label>
-                @Html.DropDownList("StylistList", null, new { @class = "form-control" })
+                <label asp-for="FirstName"><h4>First Name:</h4></label>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", required = "true" })
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="LastName"><h4>Last Name:</h4></label>
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", required = "true" })
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"><h4>Email:</h4></label>
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", required = "true" })
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phone"><h4>Phone:</h4></label>
+                @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", required = "true" })
+                <span asp-validation-for="Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="StylistId"><h4>Stylists:</h4></label>
+                @Html.DropDownList("StylistId", null, "Select a Stylist", new { @class = "form-control", required = "true" })
+                <span asp-validation-for="StylistId" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-lg btn-info">Create Client</button>
+            <a href="/clients" class="btn btn-lg btn-info">Back</a>
         }
-        <button type="submit" class="btn btn-lg btn-info">Create Client</button>
-        <a href="/clients" class="btn btn-lg btn-info">Back</a>
+    }
+    else
+    {
+        <p>You need to add a <a href="/stylists/new">stylist</a> before you can add a client.</p>
     }
 </div>

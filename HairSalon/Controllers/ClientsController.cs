@@ -22,7 +22,7 @@ namespace HairSalon.Controllers
         [HttpGet("/clients/new")]
         public ActionResult Create()
         {
-            ViewBag.StylistList = db.Stylists.ToList()
+            ViewBag.StylistId = db.Stylists.ToList()
                 .Select(stylist => new SelectListItem {
                     Value = stylist.StylistId.ToString(),
                     Text = stylist.FirstName + " " + stylist.LastName
@@ -40,7 +40,7 @@ namespace HairSalon.Controllers
         }
 
         [HttpGet("/clients/{id}")]
-        public ActionResult Details(int id)
+        public ActionResult Show(int id)
         {
             Client client = db.Clients.FirstOrDefault(item => item.ClientId == id);
             return View(client);

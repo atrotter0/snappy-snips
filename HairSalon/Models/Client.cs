@@ -28,6 +28,9 @@ namespace HairSalon.Models
         [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Phone number format is not valid.")]
         public string Phone { get; set; }
 
+        [Required(ErrorMessage = "Stylist is required.")]
+        public int StylistId { get; set; }
+
         public virtual Stylist Stylist { get; set; }
     }
 }

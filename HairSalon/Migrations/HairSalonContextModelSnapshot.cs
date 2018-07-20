@@ -34,7 +34,7 @@ namespace HairSalon.Migrations
                     b.Property<string>("Phone")
                         .IsRequired();
 
-                    b.Property<int?>("StylistId");
+                    b.Property<int>("StylistId");
 
                     b.HasKey("ClientId");
 
@@ -68,7 +68,8 @@ namespace HairSalon.Migrations
                 {
                     b.HasOne("HairSalon.Models.Stylist", "Stylist")
                         .WithMany("Clients")
-                        .HasForeignKey("StylistId");
+                        .HasForeignKey("StylistId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }
