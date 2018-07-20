@@ -1,0 +1,20 @@
+@using HairSalon.Models
+@model HairSalon.Models.Client
+
+@{
+    ViewData["Title"] = "Snappy Snips | Client Details";
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <h1>Client Details</h1>
+    <h4>Name: @Model.FirstName @Model.LastName</h4>
+    <h4>Email: @Model.Email</h4>
+    <h4>Phone: @Model.Phone</h4>
+    <h4>Stylist: </h4>
+    <ul>
+        <!-- <li>Add clients here</li> -->
+    </ul>
+    <hr />
+    <a href="/clients" class="btn btn-lg btn-info">Back</a>
+</div>
