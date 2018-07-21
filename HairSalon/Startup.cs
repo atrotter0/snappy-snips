@@ -25,6 +25,8 @@ namespace HairSalon
 
         public void ConfigureServices(IServiceCollection services)
         {
+            var connectionString = Configuration.GetConnectionString("HairSalonContext");
+            services.AddEntityFrameworkNpgsql().AddDbContext<HairSalonContext>(options => options.UseNpgsql(connectionString));
             services.AddMvc();
         }
 
