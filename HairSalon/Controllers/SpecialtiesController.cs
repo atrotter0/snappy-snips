@@ -76,7 +76,7 @@ namespace HairSalon.Controllers
         public ActionResult Edit(Specialty specialty, List<int> StylistIds)
         {
             db.Entry(specialty).State = EntityState.Modified;
-            var specialtyMatchesInJoinTable = db.StylistsSpecialties.Where(entry => entry.StylistId == specialty.SpecialtyId).ToList();
+            var specialtyMatchesInJoinTable = db.StylistsSpecialties.Where(entry => entry.SpecialtyId == specialty.SpecialtyId).ToList();
             foreach (var stylist in specialtyMatchesInJoinTable)
             {
                 int stylistId = stylist.StylistId;

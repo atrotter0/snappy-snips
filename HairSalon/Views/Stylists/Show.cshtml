@@ -16,6 +16,13 @@
             <li><img src="/img/client-icon.png" class="client-icon"><a href="/clients/@client.ClientId">@client.FirstName @client.LastName</a></li>
         }
     </ul>
+    <p>Specialties: </p>
+    <ul class="salon-list">
+        @foreach (var specialty in ViewBag.SpecialtyList)
+        {
+            <li><img src="/img/specialty-icon.png" class="specialty-icon"><a href="/specialties/@specialty.SpecialtyId">@specialty.Name</a></li>
+        }
+    </ul>
     <hr />
     <a href="/stylists" class="btn btn-lg btn-info">Back</a>
 </div>
