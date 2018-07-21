@@ -18,7 +18,9 @@
         <ul class="salon-list">
             @foreach (var stylist in ViewBag.StylistList)
             {
-                <li><img src="/img/stylist-icon.svg" class="stylist-icon"><a href="/stylists/@stylist.StylistId">@stylist.FirstName @stylist.LastName</a></li>
+                @if (@stylist != null && @stylist.FirstName != null)
+                    <li><img src="/img/stylist-icon.svg" class="stylist-icon"><a href="/stylists/@stylist.StylistId">@stylist.FirstName @stylist.LastName</a></li>
+                }
             }
         </ul>
     }
