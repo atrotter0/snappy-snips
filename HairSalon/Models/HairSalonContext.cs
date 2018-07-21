@@ -15,7 +15,13 @@ namespace HairSalon.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(@"Server=localhost;Port=8889;database=abel_trotter;uid=root;pwd=root;");
+            optionsBuilder.UseNpgsql(@"User ID=" + System.Environment.GetEnvironmentVariable("DATABASE_USER") +
+                                        ";Password=" + System.Environment.GetEnvironmentVariable("DATABASE_PASSWORD") +
+                                        ";Host=" + System.Environment.GetEnvironmentVariable("DATABASE_HOST") +
+                                        ";Port=" + System.Environment.GetEnvironmentVariable("DATABASE_PORT") +
+                                        ";Database=" + System.Environment.GetEnvironmentVariable("DATABASE_NAME") +
+                                        ";Pooling=true;Use SSL Stream=True;SSL Mode=Require;TrustServerCertificate=True;"
+                                    );
         }
     }
 }

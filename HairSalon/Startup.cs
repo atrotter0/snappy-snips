@@ -28,8 +28,9 @@ namespace HairSalon
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, HairSalonContext db)
         {
+            db.Database.Migrate();
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
             app.UseMvc(routes =>
