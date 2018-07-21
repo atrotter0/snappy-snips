@@ -11,7 +11,14 @@
     <p>Email: @Model.Email</p>
     <p>Phone: @Model.Phone</p>
     <p>Stylist: 
-        <a href="/stylists/@ViewBag.Stylist.StylistId">@ViewBag.Stylist.FirstName @ViewBag.Stylist.LastName</a>
+        @if (@Viewbag.Stylist != null)
+        {
+            <a href="/stylists/@ViewBag.Stylist.StylistId">@ViewBag.Stylist.FirstName @ViewBag.Stylist.LastName</a>
+        }
+        else
+        {
+            <p>No stylist assigned.</p>
+        }
     </p>
     <hr />
     <a href="/clients" class="btn btn-lg btn-info">Back</a>
