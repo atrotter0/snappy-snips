@@ -2,6 +2,10 @@ body {
     font-family: 'Gloria Hallelujah', cursive;
 }
 
+.inline {
+    display: inline-block;
+}
+
 .container {
     width: 70%;
     max-width: 800px;

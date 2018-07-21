@@ -76,5 +76,16 @@ namespace HairSalon.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        [HttpPost("/clients/delete")]
+        public ActionResult DeleteAll(int id)
+        {
+            foreach (var entry in db.Clients)
+            {
+                db.Clients.Remove(entry);
+            }
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

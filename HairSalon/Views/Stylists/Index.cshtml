@@ -8,6 +8,10 @@
 <div class="container">
     <h1>Stylists</h1>
     @Html.ActionLink("Add Stylist", "Create", "Stylists", null, new { @class="btn btn-lg btn-info" })
+    @using (Html.BeginForm("delete", "Stylists", FormMethod.Post, new { @class="inline" }))
+    {
+        <button type="submit" class="btn btn-lg btn-danger">Delete All</button>
+    }
     @if (Model.Count() > 0)
     {
         <div class="grid-container">
