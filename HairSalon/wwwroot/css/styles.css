@@ -39,18 +39,20 @@ h1 {
     border: 1px solid #e0dddd;
     border-radius: 5px;
     font-size: 1em;
+    letter-spacing: 2px;
 }
 
 .grid-item {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: left;
-    padding: 10px
+    padding: 10px;
 }
 
 .no-btn-styles {
     border: none;
     background-color: none;
     color: #337ab7;
+    letter-spacing: 2px;
 }
 
 .no-btn-styles:hover {
@@ -83,8 +85,42 @@ h1 {
 
 /* responsive styles */
 
+@media screen and (max-width: 850px) {
+    .grid-item {
+        width: 100%;
+        display: block;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 675px) {
+    .grid-container {
+        width: 100%;
+        display: block;
+    }
+
+    .grid-item a, .no-btn-styles {
+        display: block;
+        text-align: center;
+        border: 1px solid #444;
+        padding: 10px;
+        border-radius: 2px;
+        transition: 0.5s;
+    }
+
+    .grid-item a:hover, .no-btn-styles:hover {
+        text-decoration: none;
+        box-shadow: 2px 2px 5px #444;
+        letter-spacing: 4px;
+        transition: 0.5s;
+    }
+
+    .no-btn-styles {
         width: 100%;
     }
 }
