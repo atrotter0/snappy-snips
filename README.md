@@ -58,8 +58,8 @@ A .NET web app that allows the owner of a hair salon to add stylists, their spec
 
 ## Links
 
-* [Github Repo] https://github.com/atrotter0/snappy-snips
-* [Heroku] https://snappy-snips.herokuapp.com/ (currently displaying heroku-branch)
+* [Github Repo] (https://github.com/atrotter0/snappy-snips)
+* [Heroku] (https://snappy-snips.herokuapp.com/) - currently displaying heroku-branch
 
 ## License
 
