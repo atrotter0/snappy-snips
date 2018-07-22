@@ -103,9 +103,19 @@ namespace HairSalon.Controllers
         public ActionResult Delete(int id)
         {
             Stylist stylist = db.Stylists.FirstOrDefault(item => item.StylistId == id);
-            StylistSpecialty joinEntry = db.StylistsSpecialties.FirstOrDefault(entry => entry.SpecialtyId == id);
             db.Stylists.Remove(stylist);
-            if (joinEntry != null) db.StylistsSpecialties.Remove(joinEntry);
+
+            var stylistSpecialistEntries = db.StylistsSpecialties.Where(entry => entry.StylistId == id).ToList();
+            foreach (var entry in stylistSpecialistEntries)
+            {
+                db.StylistsSpecialties.Remove(entry);
+            }
+
+            var clientStylist = db.Clients.Where(entry => entry.StylistId == id).ToList();
+            foreach (var entry in clientStylist)
+            {
+                entry.StylistId = 0;
+            }
             db.SaveChanges();
             return RedirectToAction("Index");
         }
